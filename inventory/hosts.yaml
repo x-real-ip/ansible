@@ -48,17 +48,16 @@ shelly:
 
 shelly_dimmer:
   hosts:
-    shellydimmer-F36674:
     shellydimmer-D4826F:
-    shellydimmer-DB3DDA:
-    shellydimmer-DB4094:
-    shellydimmer-F3A9E8:
     shellydimmer2-e8db84d4411c:
     shellydimmer2-E8DB84D794FD:
     shellydimmer2-48E7297D3CDA:
     shellydimmer2-08F9E046DEF4:
     shellydimmer2-48E7297DA4B5:
     shellydimmer2-EC64C9C1CAF8:
+    shellydimmer-master-bedroom:
+    shellydimmer-laundry-room:
+    shellydimmer-office:
 
 shelly_plug:
   hosts:
@@ -78,6 +77,7 @@ shelly_plug_plus:
     shellyplusplugs-e465b8b48aa4:
     shellyplusplugs-64b7080cd27c:
     shellyplusplugs-e465b8b0855c:
+    shellyplusplugs-d4d4daf43764:
 
 shelly_1:
   hosts:
