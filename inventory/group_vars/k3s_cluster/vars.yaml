@@ -47,7 +47,7 @@ sealed_secrets:
   deploy: true
   name: "sealed-secrets"
   namespace: "kube-system"
-  image_tag: "0.40.0" # curl -sL https://github.com/bitnami-labs/sealed-secrets/releases/latest | grep -oP 'tag/v\K[^"]+' | head -1
+  image_tag: "0.41.2" # curl -sL https://github.com/bitnami/sealed-secrets/releases/latest | grep -oP 'tag/v\K[^"]+' | head -1
   sealed_secret_customkeys_2_tls_key:
     "{{ vault_sealed_secret_customkeys_2_tls_key }}"
 
