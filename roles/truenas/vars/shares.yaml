@@ -415,16 +415,6 @@ shares:
         iscsi_parameters:
           QueuedCommands:
         mode: ISCSI
-        name: music-assistant-server-config
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
         name: seerr-config
       - alias:
         auth_networks: []
@@ -564,20 +554,6 @@ shares:
         insecure_tpc: true
         name: mosquitto-data
         path: zvol/ssd/containers/k8s/mosquitto-data
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
-        disk: zvol/ssd/containers/k8s/music-assistant-server-config
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: music-assistant-server-config
-        path: zvol/ssd/containers/k8s/music-assistant-server-config
         pblocksize: false
         ro: false
         rpm: SSD
