@@ -33,7 +33,11 @@ argocd:
   deploy: true
   name: argocd-core
   namespace: argocd
-  version: "v3.5.5" # curl -s https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r .tag_name
+  # The Argo CD version is pinned by the vendored install.yaml in the gitops repo
+  # (manifests/argocd/base/install.yaml). Ansible renders the kustomize overlay from there.
+  manifest_url: https://raw.githubusercontent.com/x-real-ip/gitops
+  manifest_ref: main
+  manifest_path: manifests/argocd
 
 kube_vip:
   deploy: true

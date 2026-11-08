@@ -7,19 +7,42 @@
     state: present
   run_once: true
 
-- name: Download public manifest | {{ argocd.name }}
+- name: Create kustomize directories | {{ argocd.name }}
+  ansible.builtin.file:
+    path: "~/argocd/{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - base
+    - overlay
+  run_once: true
+
+- name: Download kustomize manifests from gitops repo | {{ argocd.name }}
   ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/argoproj/argo-cd/{{ argocd.version }}/manifests/install.yaml
-    dest: ~/argocd-core.yaml
+    url: "{{ argocd.manifest_url }}/{{ argocd.manifest_ref }}/{{ argocd.manifest_path }}/{{ item }}"
+    dest: "~/argocd/{{ item }}"
     mode: "0664"
     force: true
+  loop:
+    - base/kustomization.yaml
+    - base/install.yaml
+    - overlay/kustomization.yaml
+    - overlay/patch_configmap_argocd-cm.yaml
+  run_once: true
+
+- name: Render kustomize overlay | {{ argocd.name }}
+  ansible.builtin.command:
+    cmd: kubectl kustomize overlay
+    chdir: ~/argocd
+  register: argocd_manifest
+  changed_when: false
   run_once: true
 
 - name: Apply manifest to the cluster | {{ argocd.name }}
   kubernetes.core.k8s:
     namespace: "{{ argocd.namespace }}"
     state: present
-    src: ~/argocd-core.yaml
+    definition: "{{ argocd_manifest.stdout | from_yaml_all | list }}"
   run_once: true
 
 - name: Deploy app-of-core-apps
