@@ -298,19 +298,9 @@ shares:
             port: 3260
 
     zvols:
-      - name: ssd/containers/k8s/authentik-db
-        type: VOLUME
-        volsize: 21474836480
-        volblocksize: "16K"
-        sparse: true
       - name: ssd/containers/k8s/protonmail-bridge
         type: VOLUME
         volsize: 2147483648
-        volblocksize: "16K"
-        sparse: true
-      - name: ssd/containers/k8s/depart-db
-        type: VOLUME
-        volsize: 5368709120
         volblocksize: "16K"
         sparse: true
       - name: ssd/containers/k8s/depart-documents
@@ -320,46 +310,6 @@ shares:
         sparse: true
 
     targets:
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
-        name: dsmr-reader-db-2
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
-        name: home-assistant-db-2
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
-        name: immich-database
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
-        name: open-family-finance-db
       - alias:
         auth_networks: []
         groups:
@@ -380,16 +330,6 @@ shares:
           QueuedCommands:
         mode: ISCSI
         name: omada-controller-config-2
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
-        name: paperless-db
       - alias:
         auth_networks: []
         groups:
@@ -450,16 +390,6 @@ shares:
           QueuedCommands:
         mode: ISCSI
         name: uptime-kuma
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
-        name: vaultwarden-db-2
       - alias:
         auth_networks: []
         groups:
@@ -550,27 +480,7 @@ shares:
         iscsi_parameters:
           QueuedCommands:
         mode: ISCSI
-        name: authentik-db
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
         name: protonmail-bridge
-      - alias:
-        auth_networks: []
-        groups:
-          - auth:
-            authmethod: NONE
-            portal: 1
-        iscsi_parameters:
-          QueuedCommands:
-        mode: ISCSI
-        name: depart-db
       - alias:
         auth_networks: []
         groups:
@@ -601,21 +511,6 @@ shares:
       - avail_threshold: null
         blocksize: 4096
         comment: ""
-        disk: zvol/ssd/containers/k8s/dsmr-reader-db-2
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: dsmr-reader-db-2
-        path: zvol/ssd/containers/k8s/dsmr-reader-db-2
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        serial: f3a6107dbca84bf
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
         disk: zvol/ssd/containers/k8s/frigate-config-2
         enabled: true
         filesize: "0"
@@ -626,48 +521,6 @@ shares:
         ro: false
         rpm: SSD
         serial: 07938a7410ff37e
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
-        disk: zvol/ssd/containers/k8s/home-assistant-db-2
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: home-assistant-db-2
-        path: zvol/ssd/containers/k8s/home-assistant-db-2
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
-        disk: zvol/ssd/containers/k8s/immich-database
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: immich-database
-        path: zvol/ssd/containers/k8s/immich-database
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
-        disk: zvol/ssd/containers/k8s/open-family-finance-db
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: open-family-finance-db
-        path: zvol/ssd/containers/k8s/open-family-finance-db
-        pblocksize: false
-        ro: false
-        rpm: SSD
         type: DISK
         xen: false
       - avail_threshold: null
@@ -771,20 +624,6 @@ shares:
       - avail_threshold: null
         blocksize: 4096
         comment: ""
-        disk: zvol/ssd/containers/k8s/paperless-db
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: paperless-db
-        path: zvol/ssd/containers/k8s/paperless-db
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
         disk: zvol/ssd/containers/k8s/prowlarr-config
         enabled: true
         filesize: "0"
@@ -855,20 +694,6 @@ shares:
       - avail_threshold: null
         blocksize: 4096
         comment: ""
-        disk: zvol/ssd/containers/k8s/vaultwarden-db-2
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: vaultwarden-db-2
-        path: zvol/ssd/containers/k8s/vaultwarden-db-2
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
         disk: zvol/ssd/containers/k8s/sonarr-config
         enabled: true
         filesize: "0"
@@ -897,40 +722,12 @@ shares:
       - avail_threshold: null
         blocksize: 4096
         comment: ""
-        disk: zvol/ssd/containers/k8s/authentik-db
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: authentik-db
-        path: zvol/ssd/containers/k8s/authentik-db
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
         disk: zvol/ssd/containers/k8s/protonmail-bridge
         enabled: true
         filesize: "0"
         insecure_tpc: true
         name: protonmail-bridge
         path: zvol/ssd/containers/k8s/protonmail-bridge
-        pblocksize: false
-        ro: false
-        rpm: SSD
-        type: DISK
-        xen: false
-      - avail_threshold: null
-        blocksize: 4096
-        comment: ""
-        disk: zvol/ssd/containers/k8s/depart-db
-        enabled: true
-        filesize: "0"
-        insecure_tpc: true
-        name: depart-db
-        path: zvol/ssd/containers/k8s/depart-db
         pblocksize: false
         ro: false
         rpm: SSD
