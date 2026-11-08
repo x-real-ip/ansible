@@ -139,8 +139,8 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/home-assistant-config-2
       ro: false
@@ -163,8 +163,8 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/node-red-data
       ro: false
@@ -175,8 +175,8 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/paperless-data
       ro: false
@@ -187,8 +187,8 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/paperless-export
       ro: false
@@ -199,8 +199,8 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/paperless-media
       ro: false
@@ -223,8 +223,8 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/radicale-data
       ro: false
@@ -247,8 +247,8 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/vaultwarden-data
       ro: false
@@ -259,34 +259,10 @@ shares:
       hosts: []
       mapall_group: ""
       mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
+      maproot_group: wheel
+      maproot_user: root
       networks: []
       path: /mnt/ssd/containers/k8s/zwavejs2mqtt-data
-      ro: false
-      security: []
-    - aliases: []
-      comment: ""
-      enabled: true
-      hosts: []
-      mapall_group: ""
-      mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
-      networks: []
-      path: /mnt/hdd/backups/proxmox/pve-a
-      ro: false
-      security: []
-    - aliases: []
-      comment: ""
-      enabled: true
-      hosts: []
-      mapall_group: ""
-      mapall_user: ""
-      maproot_group: ""
-      maproot_user: ""
-      networks: []
-      path: /mnt/hdd/backups/proxmox/pve-b
       ro: false
       security: []
 
